@@ -1,4 +1,4 @@
-import { Button, Container, Grid } from '@mui/material';
+import { Alert, Button, Container, Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import OpenModal from '../Shared/OpenModal/OpenModal';
@@ -7,10 +7,11 @@ const PurchasePage = () => {
     const {productId}=useParams();
     const [selectedProduct,setSelectedProduct]=useState([])
     const [open, setOpen] = React.useState(false);
+    const [alert,setAlert]=useState(false)
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
     useEffect(()=>{
-        fetch("/fakedata.json")
+        fetch("http://localhost:5000/products")
         .then(res=>res.json())
         .then(data=>{
             const filteredData=data.find(pd=>pd.key==productId)
@@ -24,12 +25,14 @@ const PurchasePage = () => {
             open={open}
             handleOpen={handleOpen}
             handleClose={handleClose}
+           setAlert={setAlert}
      >
 
      </OpenModal>
             <Grid container spacing={2} style={{padding:"40px"}}>
   <Grid item xs={12} md={6}>
    <h1>{selectedProduct.drone}</h1>
+   {alert && <Alert severity="success">product purchase sucessful!</Alert>}
    <h3> camera:{selectedProduct.camera}</h3>
    <h3 style={{color:"gray"}}>Drones flight time is {selectedProduct.FlightTime}</h3>
    <p>{selectedProduct.description}</p>

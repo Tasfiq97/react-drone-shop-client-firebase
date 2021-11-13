@@ -8,11 +8,11 @@ const Purchase = () => {
     const [selectedData,setSelectedData]=useState();
     useEffect(()=>{
         
-            fetch("./fakedata.json")
+            fetch("http://localhost:5000/products")
             .then(res=>res.json())
             .then(data=>setData(data));
 
-    const newData=data.splice(0,6)
+    const newData=data.slice(0,6)
     setSelectedData(newData);
     },[data])
     return (

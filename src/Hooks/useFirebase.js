@@ -7,20 +7,23 @@ const useFirebase=()=>{
 const [user,setUser]=useState({})
 const [loading,setLoading]=useState(true)
 const auth = getAuth();
+const [isAdmin,setIsAdmin]=useState(false)
 
 
 const signinEmaliPass=(email,password,name,location,history)=>{
     setLoading(true)
     createUserWithEmailAndPassword(auth, email, password)
-    
+        
     .then((userCredential) => {
       
     const newUser={email,displayName:name}
     setUser(newUser);
+    saveUser(email,name);
+    history.push("/")
     updateProfile(auth.currentUser, {
         displayName: name
       }).then(() => {
-        
+         
       }).catch((error) => {
        
       });
@@ -49,7 +52,11 @@ useEffect(()=>{
 
 },[]);
 
-
+useEffect(()=>{
+  fetch(`http://localhost:5000/users/admin/${user.email}`)
+  .then(res=>res.json())
+  .then(data=>setIsAdmin(data.admin))
+},[user?.email])
 // login 
 
 const login=(email,password,location,history)=>{
@@ -80,8 +87,19 @@ signOut(auth).then(() => {
 .finally(setLoading(false))
 }
 
+const saveUser=(email,displayName)=>{
+    const user={email,displayName}
+    fetch("http://localhost:5000/users",{
+      method:"POST",
+      headers:{"content-type":"application/json"},
+      body:JSON.stringify(user)
+
+    })
+}
+
 return {
     user,
+    isAdmin,
     signinEmaliPass,
     logout,
     login,

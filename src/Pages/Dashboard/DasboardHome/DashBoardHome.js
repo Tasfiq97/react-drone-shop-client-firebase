@@ -20,24 +20,30 @@ import Payment from '../Payment/Payment';
 import MyOrders from '../MyOrders/MyOrders';
 import Reviews from '../Reviews/Reviews';
 import DashboardMain from '../DashboardMain/DashboardMain';
+import useAuth from '../../../Hooks/useAuth';
+import { Button } from '@mui/material';
+import MakeAdmin from '../DashboardMain/MakeAdmin/MakeAdmin';
 
 const drawerWidth = 240;
 
 function DashboardHome(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+const {isAdmin}=useAuth();
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
   let { path, url } = useRouteMatch();
+  const {user,logout}=useAuth()
   const drawer = (
     <div>
       <Toolbar />
       <Divider />
 
            <Box sx={{padding:"50px",lineHeight:"60px"}}>
-           <Link  to={`${url}`} style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px"}}>dashboard</Link>
+           <Link  to="/moreDrones" style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px"}}>Drones</Link> <br />
+           {!isAdmin ? <Box>
+            <Link  to={`${url}`} style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px"}}>dashboard</Link>
            <br />
            <Link to={`${url}/pay`} style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px"}}>Pay</Link>
          <br />
@@ -48,7 +54,22 @@ function DashboardHome(props) {
             <Link to={`${url}/reviews`} style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px"}}>Review</Link>
         
            <br />
-            <Link  style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px"}}>Logout</Link>
+           </Box>
+           :
+           <Box>
+             <Link to={`${url}/admin`} style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px"}}>Make admin</Link>
+           <br />
+           <Link to={`${url}/admin`} style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px",fontSize:"15px"}}>Manage orders</Link>
+           <br />
+           <Link to={`${url}/admin`} style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px",fontSize:"13px"}}>Manage products</Link>
+           <br />
+           <Link to={`${url}/admin`} style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px"}}>Add a product</Link>
+           <br />
+             </Box>}
+            {user?.email &&
+            <Link to="/login"  style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px"}}> 
+            <Button onClick={logout} variant="text" sx={{color:"white"}}>Logout</Button>
+            </Link>}
            </Box>
          
       
@@ -123,7 +144,9 @@ function DashboardHome(props) {
       
         <Switch>
              <Route exact  path={path}>
-                        <DashboardMain></DashboardMain>
+                        {!isAdmin ?
+                        <DashboardMain></DashboardMain> :
+                        <MakeAdmin></MakeAdmin>}
 
              </Route>
              <Route  path={`${path}/pay`}>
@@ -136,6 +159,10 @@ function DashboardHome(props) {
              </Route>
              <Route path={`${path}/reviews`}>
                  <Reviews></Reviews>
+
+             </Route>
+             <Route path={`${path}/admin`}>
+               <MakeAdmin></MakeAdmin>
 
              </Route>
         </Switch>

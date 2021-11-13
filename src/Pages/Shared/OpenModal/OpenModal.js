@@ -15,8 +15,9 @@ const style = {
     boxShadow: 24,
     p: 4,
   };
-const OpenModal = ({open,handleClose,handleOpen,selectedProduct}) => {
+const OpenModal = ({open,handleClose,handleOpen,selectedProduct,setAlert}) => {
   const {user}=useAuth()
+  
     const initialInfo={email:user.email}
     const [order,setOrder]=useState(initialInfo);
 
@@ -34,8 +35,22 @@ const handleOnBlur=(e)=>{
         e.preventDefault();
         const ordersInfo={
             ...order,
-            product:selectedProduct.drone
+            product:selectedProduct.drone,
+            price:selectedProduct.price
         }
+
+        fetch("http://localhost:5000/purchase",{
+          method:"POST",
+          headers:{"content-type":"application/json"},
+          body:JSON.stringify(ordersInfo)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          if(data.insertedId){
+                setAlert(true)
+                handleClose()
+          }
+        })
       // console.log(ordersInfo);  
     }
     return (

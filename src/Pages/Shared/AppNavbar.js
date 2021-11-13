@@ -33,10 +33,17 @@ const AppNavbar = () => {
             <Typography variant="h6"  sx={{ flexGrow: 1 }}>
             <Link to="/moreDrones" style={{textDecoration:"none",color:"black"}}> More Drones</Link>
           </Typography>
-        {user?.email? 
+        {user?.email? <Box>
+        
+        <Link to="/dashboard">
+        <Button variant="text" style={{marginRight:"30px"}}>
+               Dashboard
+          </Button>
+        </Link>
          <Button onClick={logout} variant="contained" style={{backgroundColor:"black"}}>
                Logout
           </Button>
+          </Box>
          :
          <Link to="/login" style={{textDecoration:"none"}}>
          <Button variant="contained" style={{backgroundColor:"black"}}>
