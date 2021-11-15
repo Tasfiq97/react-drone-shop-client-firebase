@@ -2,7 +2,7 @@ This project is made by material ui [Squadrish drone](https://niche-project-dron
 
 ## this project is made for purchasing your favorite drone
 
-## in this project you can buy any type of drone having multiple camera and a =t a good range
+## in this project you can buy any type of drone having multiple camera and at a good range
 
 ## in more drone section , there are 12 drones where you can select and place your order
 
