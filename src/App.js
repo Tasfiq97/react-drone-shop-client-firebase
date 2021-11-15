@@ -5,11 +5,11 @@ import AuthProvider from './AuthContext/AuthProvider';
 import DashboardHome from './Pages/Dashboard/DasboardHome/DashBoardHome';
 import Footer from './Pages/Home/Footer/Footer';
 import Home from './Pages/Home/Home/Home';
+import NoPageFound from './Pages/NoPageFound/NoPageFound';
 import Login from './Pages/Login/Login';
 import MoreDrones from './Pages/MoreDrones/MoreDrones';
 import PurchasePage from './Pages/PurchasePage/PurchasePage';
 import Register from './Pages/Register/Register';
-import Navbar from './Pages/Shared/Navbar';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
@@ -38,6 +38,9 @@ function App() {
    </Route>
    <Route path="/register">
 <Register></Register>
+   </Route>
+   <Route path="*">
+<NoPageFound></NoPageFound>
    </Route>
     </Switch>
     <Footer></Footer>
