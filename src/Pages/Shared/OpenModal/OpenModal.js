@@ -36,7 +36,8 @@ const handleOnBlur=(e)=>{
         const ordersInfo={
             ...order,
             product:selectedProduct.drone,
-            price:selectedProduct.price
+            price:selectedProduct.price,
+            status:"pending"
         }
 
         fetch("http://localhost:5000/purchase",{

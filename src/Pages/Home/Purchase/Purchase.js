@@ -29,7 +29,7 @@ const Purchase = () => {
                 
 </Grid>
  <Link to="/moreDrones" style={{textDecoration:"none",textAlign:"center"}}>
- <Button style={{backgroundColor:"black",color:"white",marginTop:"50px",fontSize:"25px",marginBottom:"50px",}} variant="contained">More Drones --></Button>
+ <Button style={{backgroundColor:"black",color:"white",marginTop:"50px",fontSize:"15px",marginBottom:"50px",}} variant="contained">More Drones --></Button>
  </Link>
        </Container>
     );

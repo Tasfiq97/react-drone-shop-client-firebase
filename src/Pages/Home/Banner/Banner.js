@@ -16,7 +16,7 @@ const Banner = () => {
                     Our Great Drones
                 </Typography>
                 <div>
-                    <img style={{ width: "50%" }} src={banner} alt="" />
+                    <img style={{ width: "80%" }} src={banner} alt="" />
                 </div>
             </Box>
         </Container>

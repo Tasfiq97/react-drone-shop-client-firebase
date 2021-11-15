@@ -9,14 +9,14 @@ import Login from './Pages/Login/Login';
 import MoreDrones from './Pages/MoreDrones/MoreDrones';
 import PurchasePage from './Pages/PurchasePage/PurchasePage';
 import Register from './Pages/Register/Register';
-import AppNavbar from './Pages/Shared/AppNavbar';
+import Navbar from './Pages/Shared/Navbar';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   return (
   <AuthProvider>
       <BrowserRouter>
-     <AppNavbar></AppNavbar>
+    
     <Switch>
    <Route exact path="/">
   <Home></Home>

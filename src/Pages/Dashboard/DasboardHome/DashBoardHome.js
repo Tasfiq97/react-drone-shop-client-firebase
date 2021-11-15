@@ -23,6 +23,9 @@ import DashboardMain from '../DashboardMain/DashboardMain';
 import useAuth from '../../../Hooks/useAuth';
 import { Button } from '@mui/material';
 import MakeAdmin from '../DashboardMain/MakeAdmin/MakeAdmin';
+import AddProduct from '../DashboardMain/AddProduct/AddProduct';
+import ManageOrder from '../DashboardMain/manageOrders/ManageOrder';
+import ManageProducts from '../ManageProducts/ManageProducts';
 
 const drawerWidth = 240;
 
@@ -59,11 +62,11 @@ const {isAdmin}=useAuth();
            <Box>
              <Link to={`${url}/admin`} style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px"}}>Make admin</Link>
            <br />
-           <Link to={`${url}/admin`} style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px",fontSize:"15px"}}>Manage orders</Link>
+           <Link to={`${url}/manageOrder`} style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px",fontSize:"15px"}}>Manage orders</Link>
            <br />
-           <Link to={`${url}/admin`} style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px",fontSize:"13px"}}>Manage products</Link>
+           <Link to={`${url}/manageProducts`} style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px",fontSize:"13px"}}>Manage products</Link>
            <br />
-           <Link to={`${url}/admin`} style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px"}}>Add a product</Link>
+           <Link to={`${url}/addProducts`} style={{textDecoration:"none",color:"white",backgroundColor:"black", padding:"10px"}}>Add a product</Link>
            <br />
              </Box>}
             {user?.email &&
@@ -165,6 +168,19 @@ const {isAdmin}=useAuth();
                <MakeAdmin></MakeAdmin>
 
              </Route>
+             <Route path={`${path}/addProducts`}>
+               <AddProduct></AddProduct>
+
+             </Route>
+             <Route path={`${path}/manageOrder`}>
+               <ManageOrder></ManageOrder>
+
+             </Route>
+             <Route path={`${path}/manageProducts`}>
+               <ManageProducts></ManageProducts>
+
+             </Route>
+              
         </Switch>
       </Box>
     </Box>

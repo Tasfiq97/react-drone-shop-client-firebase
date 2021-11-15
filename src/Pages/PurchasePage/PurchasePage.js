@@ -1,6 +1,8 @@
 import { Alert, Button, Container, Grid } from '@mui/material';
+import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import Navbar from '../Shared/Navbar';
 import OpenModal from '../Shared/OpenModal/OpenModal';
 
 const PurchasePage = () => {
@@ -19,7 +21,10 @@ const PurchasePage = () => {
         });
     },[])
     return (
+      <Box>
+         <Navbar></Navbar>
         <Container>
+          
             <OpenModal
             selectedProduct={selectedProduct}
             open={open}
@@ -34,7 +39,6 @@ const PurchasePage = () => {
    <h1>{selectedProduct.drone}</h1>
    {alert && <Alert severity="success">product purchase sucessful!</Alert>}
    <h3> camera:{selectedProduct.camera}</h3>
-   <h3 style={{color:"gray"}}>Drones flight time is {selectedProduct.FlightTime}</h3>
    <p>{selectedProduct.description}</p>
      <h4>price: ${selectedProduct.price}</h4>
      <Button onClick={handleOpen} variant="contained" sx={{backgroundColor:"black"}}>Place Order</Button>
@@ -46,6 +50,7 @@ const PurchasePage = () => {
   
 </Grid>
         </Container>
+        </Box>
 
     );
 };

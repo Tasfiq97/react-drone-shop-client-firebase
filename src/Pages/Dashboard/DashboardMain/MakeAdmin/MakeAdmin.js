@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 const MakeAdmin = () => {
     const [email,setEmail]=useState("");
     const [admin,setAdmin]=useState(false);
+    const [notLogin,setNotLogin]=useState(false)
 
   const handleEmail=(e)=>{
 setEmail(e.target.value)
@@ -23,6 +24,10 @@ setEmail(e.target.value)
                setAdmin(true)
                window.location.reload();
            }
+           else{
+            setNotLogin(true)
+               
+           }
         })
     }
     return (
@@ -40,6 +45,7 @@ setEmail(e.target.value)
              <Button type="submit" sx={{backgroundColor:"black"}} variant="contained">Make Admin</Button>
             </form>
             {admin && <Alert severity="success"> Admin made Successful</Alert>}
+            {notLogin && <Alert severity="error"> this email don't have account,please make an account first</Alert>}
         </div>
     );
 };
