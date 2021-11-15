@@ -40,7 +40,7 @@ const handleOnBlur=(e)=>{
             status:"pending"
         }
 
-        fetch("http://localhost:5000/purchase",{
+        fetch("https://still-mesa-21488.herokuapp.com/purchase",{
           method:"POST",
           headers:{"content-type":"application/json"},
           body:JSON.stringify(ordersInfo)

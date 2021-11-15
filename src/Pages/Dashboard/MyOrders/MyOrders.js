@@ -14,7 +14,7 @@ const MyOrders = () => {
     const {user}=useAuth()
     const [purchase,setPurchase]=React.useState([])
     React.useEffect(()=>{
-        fetch(`http://localhost:5000/allPurchase?email=${user.email}`)
+        fetch(`https://still-mesa-21488.herokuapp.com/allPurchase?email=${user.email}`)
         .then(res=>res.json())
         .then(data=>setPurchase(data));
 
@@ -22,7 +22,7 @@ const MyOrders = () => {
     const handleDelete=(id)=>{
       const proceed=window.confirm("are you sure you want to delete")
       if(proceed){
-        fetch(`http://localhost:5000/allPurchase/${id}`,{
+        fetch(`https://still-mesa-21488.herokuapp.com/allPurchase/${id}`,{
           method:'DELETE',
    
         })

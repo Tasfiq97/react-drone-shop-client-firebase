@@ -13,13 +13,13 @@ const ManageOrder = () => {
     const [order,setOrder]=React.useState([])
     const [update,setUpdate]=React.useState(null)
     React.useEffect(()=>{
-        fetch("http://localhost:5000/purchase")
+        fetch("https://still-mesa-21488.herokuapp.com/purchase")
         .then(res=>res.json())
         .then(data=>setOrder(data))
     },[update])
     const handleUpdate=(id)=>{
  console.log(id)
- fetch(`http://localhost:5000/purchase/${id}`,{
+ fetch(`https://still-mesa-21488.herokuapp.com/purchase/${id}`,{
      method:"PUT",
      headers:{"content-type":"application/json"},
      body:JSON.stringify(order)

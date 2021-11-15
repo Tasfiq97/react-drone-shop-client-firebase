@@ -53,7 +53,7 @@ useEffect(()=>{
 },[]);
 
 useEffect(()=>{
-  fetch(`http://localhost:5000/users/admin/${user.email}`)
+  fetch(`https://still-mesa-21488.herokuapp.com/users/admin/${user.email}`)
   .then(res=>res.json())
   .then(data=>setIsAdmin(data.admin))
 },[user?.email])
@@ -89,7 +89,7 @@ signOut(auth).then(() => {
 
 const saveUser=(email,displayName)=>{
     const user={email,displayName}
-    fetch("http://localhost:5000/users",{
+    fetch("https://still-mesa-21488.herokuapp.com/users",{
       method:"POST",
       headers:{"content-type":"application/json"},
       body:JSON.stringify(user)

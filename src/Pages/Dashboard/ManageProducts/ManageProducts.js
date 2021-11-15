@@ -11,7 +11,7 @@ import { Button } from '@mui/material';
 const ManageProducts = () => {
     const [allProducts,setAllProducts]=React.useState([])
     React.useEffect(()=>{
-        fetch("http://localhost:5000/products")
+        fetch("https://still-mesa-21488.herokuapp.com/products")
         .then(res=>res.json())
         .then(data=>setAllProducts(data))
 
@@ -20,7 +20,7 @@ const ManageProducts = () => {
     const handleDelete=(id)=>{
         const proceed=window.confirm("are you sure you want to delete")
         if(proceed){
- fetch(`http://localhost:5000/products/${id}`,{
+ fetch(`https://still-mesa-21488.herokuapp.com/products/${id}`,{
      method:"DELETE",
 
  })
