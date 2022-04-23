@@ -18,7 +18,7 @@ const Purchase = () => {
     return (
        <Container>
             <h1>Our Own Drones For you</h1>
-            <Grid container spacing={4}>
+            <Grid  container spacing={4}>
             
             {
                     selectedData?.map(data=><SinglePurchase

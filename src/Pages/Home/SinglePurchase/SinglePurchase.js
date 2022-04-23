@@ -6,8 +6,8 @@ const SinglePurchase = ({data}) => {
     const {drone,image,price,key,description}=data;
     return (
        
-            <Grid sx={{marginTop:"80px"}} item sm={12} md={4}>
-            <img style={{width:"75%"}} src={image} alt="" />
+            <Grid sx={{marginTop:"80px",height:"90vh",padding:"20px"}} item sm={12} md={4}>
+            <img style={{width:"75%",height:"50%"}} src={image} alt="" />
             <h3>{drone}</h3>
             <p>{description.slice(0,150)}</p>
             <p style={{color:"gray",fontWeight:"700",fontSize:"20px"}}>price: ${price}</p>

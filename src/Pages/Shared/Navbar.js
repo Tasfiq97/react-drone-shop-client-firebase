@@ -53,7 +53,7 @@ const {user,logout}=useAuth()
           <List>
           <ListItem button >
                   
-                  <Link style={{textDecoration:"none",color:"black"}} to="/"><ListItemText >Home</ListItemText></Link>
+                  <Link style={{textDecoration:"none",color:""}} to="/"><ListItemText >Home</ListItemText></Link>
                 </ListItem>
               <ListItem button >
                   
@@ -85,7 +85,7 @@ const {user,logout}=useAuth()
     return (
         <>
         <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" style={{backgroundColor:"gray"}}>
+      <AppBar position="static" style={{backgroundColor:"#a1c8c9"}}>
         <Toolbar>
           <IconButton
             size="large"
@@ -99,8 +99,8 @@ const {user,logout}=useAuth()
             <MenuIcon />
           </IconButton>
           
-          <Typography className={navLogo} variant="h4" component="div" sx={{ flexGrow: 1 }}>
-            Squadrish Drone
+          <Typography className={navLogo} variant="h4" component="div" sx={{color:"black", flexGrow: 1 ,fontWeight:"800"}}>
+            Deskidan Drone
           </Typography>
           
           <Box className={navContainer}>
