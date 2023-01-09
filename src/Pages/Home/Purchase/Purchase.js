@@ -8,7 +8,7 @@ const Purchase = () => {
     const [selectedData,setSelectedData]=useState();
     useEffect(()=>{
         
-            fetch("https://still-mesa-21488.herokuapp.com/products")
+            fetch("https://react-drone-shop-server-node-mongo.vercel.app/products")
             .then(res=>res.json())
             .then(data=>setData(data));
 

@@ -13,7 +13,7 @@ const PurchasePage = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
     useEffect(()=>{
-        fetch("https://still-mesa-21488.herokuapp.com/products")
+        fetch("https://react-drone-shop-server-node-mongo.vercel.app/products")
         .then(res=>res.json())
         .then(data=>{
             const filteredData=data.find(pd=>pd.key==productId)

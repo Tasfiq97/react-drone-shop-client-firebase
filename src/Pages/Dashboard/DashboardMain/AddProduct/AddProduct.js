@@ -14,7 +14,7 @@ const AddProduct = () => {
     const handleSubmit=(e)=>{
         e.preventDefault();
        
-        fetch("https://still-mesa-21488.herokuapp.com/products",{
+        fetch("https://react-drone-shop-server-node-mongo.vercel.app/products",{
             method:"POST",
             headers:{
                 "content-type":"application/json"

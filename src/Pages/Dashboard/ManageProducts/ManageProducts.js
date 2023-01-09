@@ -11,7 +11,7 @@ import { Button } from '@mui/material';
 const ManageProducts = () => {
     const [allProducts,setAllProducts]=React.useState([])
     React.useEffect(()=>{
-        fetch("https://still-mesa-21488.herokuapp.com/products")
+        fetch("https://react-drone-shop-server-node-mongo.vercel.app/products")
         .then(res=>res.json())
         .then(data=>setAllProducts(data))
 
@@ -20,7 +20,7 @@ const ManageProducts = () => {
     const handleDelete=(id)=>{
         const proceed=window.confirm("are you sure you want to delete")
         if(proceed){
- fetch(`https://still-mesa-21488.herokuapp.com/products/${id}`,{
+ fetch(`https://react-drone-shop-server-node-mongo.vercel.app/products/${id}`,{
      method:"DELETE",
 
  })

@@ -27,7 +27,7 @@ const handleSubmit=(e)=>{
             ratingNew:ratingNum,
             name:user.displayName
         }
-        fetch("https://still-mesa-21488.herokuapp.com/review",{
+        fetch("https://react-drone-shop-server-node-mongo.vercel.app/review",{
                 method:"POST",
                 headers:{"content-type":"application/json"},
                 body:JSON.stringify(newReview)

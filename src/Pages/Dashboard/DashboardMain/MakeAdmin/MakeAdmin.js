@@ -13,7 +13,7 @@ setEmail(e.target.value)
     const handleSubmit=(e)=>{
         e.preventDefault()
   const user={email}
-        fetch("https://still-mesa-21488.herokuapp.com/users/admin",{
+        fetch("https://react-drone-shop-server-node-mongo.vercel.app/users/admin",{
             method:"PUT",
             headers:{"content-type":"application/json"},
             body:JSON.stringify(user)

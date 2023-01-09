@@ -40,7 +40,7 @@ const handleOnBlur=(e)=>{
             status:"pending"
         }
 
-        fetch("https://still-mesa-21488.herokuapp.com/purchase",{
+        fetch("https://react-drone-shop-server-node-mongo.vercel.app/purchase",{
           method:"POST",
           headers:{"content-type":"application/json"},
           body:JSON.stringify(ordersInfo)
