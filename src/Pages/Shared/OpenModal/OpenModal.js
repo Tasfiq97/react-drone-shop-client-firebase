@@ -40,7 +40,7 @@ const handleOnBlur=(e)=>{
             status:"pending"
         }
 
-        fetch("https://react-drone-shop-server-node-mongo.vercel.app/purchase",{
+        fetch("https://niche-website-server-tasfiq97.vercel.app/purchase",{
           method:"POST",
           headers:{"content-type":"application/json"},
           body:JSON.stringify(ordersInfo)

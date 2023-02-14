@@ -14,7 +14,7 @@ const AddProduct = () => {
     const handleSubmit=(e)=>{
         e.preventDefault();
        
-        fetch("https://react-drone-shop-server-node-mongo.vercel.app/products",{
+        fetch("https://niche-website-server-tasfiq97.vercel.app/products",{
             method:"POST",
             headers:{
                 "content-type":"application/json"

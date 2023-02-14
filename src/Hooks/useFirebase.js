@@ -53,7 +53,7 @@ useEffect(()=>{
 },[]);
 
 useEffect(()=>{
-  fetch(`https://react-drone-shop-server-node-mongo.vercel.app/users/admin/${user.email}`)
+  fetch(`https://niche-website-server-tasfiq97.vercel.app/users/admin/${user.email}`)
   .then(res=>res.json())
   .then(data=>setIsAdmin(data.admin))
 },[user?.email])
@@ -89,7 +89,7 @@ signOut(auth).then(() => {
 
 const saveUser=(email,displayName)=>{
     const user={email,displayName}
-    fetch("https://react-drone-shop-server-node-mongo.vercel.app/users",{
+    fetch("https://niche-website-server-tasfiq97.vercel.app/users",{
       method:"POST",
       headers:{"content-type":"application/json"},
       body:JSON.stringify(user)

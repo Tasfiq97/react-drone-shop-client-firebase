@@ -14,7 +14,7 @@ const MyOrders = () => {
     const {user}=useAuth()
     const [purchase,setPurchase]=React.useState([])
     React.useEffect(()=>{
-        fetch(`https://react-drone-shop-server-node-mongo.vercel.app/allPurchase?email=${user.email}`)
+        fetch(`https://niche-website-server-tasfiq97.vercel.app/allPurchase?email=${user.email}`)
         .then(res=>res.json())
         .then(data=>setPurchase(data));
 
@@ -22,7 +22,7 @@ const MyOrders = () => {
     const handleDelete=(id)=>{
       const proceed=window.confirm("are you sure you want to delete")
       if(proceed){
-        fetch(`https://react-drone-shop-server-node-mongo.vercel.app/allPurchase/${id}`,{
+        fetch(`https://niche-website-server-tasfiq97.vercel.app/allPurchase/${id}`,{
           method:'DELETE',
    
         })

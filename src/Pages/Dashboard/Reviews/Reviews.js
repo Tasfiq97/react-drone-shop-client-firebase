@@ -27,7 +27,7 @@ const handleSubmit=(e)=>{
             ratingNew:ratingNum,
             name:user.displayName
         }
-        fetch("https://react-drone-shop-server-node-mongo.vercel.app/review",{
+        fetch("https://niche-website-server-tasfiq97.vercel.app/review",{
                 method:"POST",
                 headers:{"content-type":"application/json"},
                 body:JSON.stringify(newReview)

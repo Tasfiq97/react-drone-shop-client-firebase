@@ -8,7 +8,7 @@ const Review = () => {
     const [reviews,setReviews]=useState([])
 
     useEffect(()=>{
-  fetch("https://react-drone-shop-server-node-mongo.vercel.app/reviews")
+  fetch("https://niche-website-server-tasfiq97.vercel.app/reviews")
   .then(res=>res.json())
   .then(data=>setReviews(data))
     },[])
