@@ -45,7 +45,7 @@ const OpenModal = ({
       status: "pending",
     };
 
-    fetch("https://drone-shop-server-production.up.railway.app/purchase", {
+    fetch("https://niche-server-drone.vercel.app/purchase", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(ordersInfo),

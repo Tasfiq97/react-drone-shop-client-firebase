@@ -15,7 +15,7 @@ const MyOrders = () => {
   const [purchase, setPurchase] = React.useState([]);
   React.useEffect(() => {
     fetch(
-      `https://drone-shop-server-production.up.railway.app/allPurchase?email=${user.email}`
+      `https://niche-server-drone.vercel.app/allPurchase?email=${user.email}`
     )
       .then((res) => res.json())
       .then((data) => setPurchase(data));
@@ -24,7 +24,7 @@ const MyOrders = () => {
     const proceed = window.confirm("are you sure you want to delete");
     if (proceed) {
       fetch(
-        `https://drone-shop-server-production.up.railway.app/allPurchase/${id}`,
+        `https://niche-server-drone.vercel.app/allPurchase/${id}`,
         {
           method: "DELETE",
         }

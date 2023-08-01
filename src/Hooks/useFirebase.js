@@ -48,7 +48,7 @@ const useFirebase = () => {
 
   useEffect(() => {
     fetch(
-      `https://drone-shop-server-production.up.railway.app/users/admin/${user.email}`
+      `https://niche-server-drone.vercel.app/users/admin/${user.email}`
     )
       .then((res) => res.json())
       .then((data) => setIsAdmin(data.admin));
@@ -81,7 +81,7 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName) => {
     const user = { email, displayName };
-    fetch("https://drone-shop-server-production.up.railway.app/users", {
+    fetch("https://niche-server-drone.vercel.app/users", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(user),

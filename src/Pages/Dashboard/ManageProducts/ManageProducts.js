@@ -12,7 +12,7 @@ import Swal from "sweetalert2";
 const ManageProducts = () => {
   const [allProducts, setAllProducts] = React.useState([]);
   React.useEffect(() => {
-    fetch("https://drone-shop-server-production.up.railway.app/products")
+    fetch("https://niche-server-drone.vercel.app/products")
       .then((res) => res.json())
       .then((data) => setAllProducts(data));
   }, []);
@@ -21,7 +21,7 @@ const ManageProducts = () => {
     const proceed = window.confirm("are you sure you want to delete");
     if (proceed) {
       fetch(
-        `https://drone-shop-server-production.up.railway.app/products/${id}`,
+        `https://niche-server-drone.vercel.app/products/${id}`,
         {
           method: "DELETE",
         }

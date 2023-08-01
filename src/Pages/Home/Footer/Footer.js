@@ -31,7 +31,7 @@ const Footer = () => {
     <Button sx={{m:2}} variant="contained">Subscribe</Button>
     <p>Objectively innovate empowered manufactured products whereas parallel platforms.</p>
   </Grid>
-  <p style={{textAlign:"center"}}>&copy; all rights reseerved || 2021</p>
+  <p style={{textAlign:"center"}}>&copy; all rights reseerved || 2023</p>
 </Grid>
     );
 };

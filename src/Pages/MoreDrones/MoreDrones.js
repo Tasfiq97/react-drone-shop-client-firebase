@@ -8,7 +8,7 @@ const MoreDrones = () => {
   const [alldata, setAllData] = useState([]);
 
   useEffect(() => {
-    fetch("https://drone-shop-server-production.up.railway.app/products")
+    fetch("https://niche-server-drone.vercel.app/products")
       .then((res) => res.json())
       .then((data) => setAllData(data));
   }, []);
