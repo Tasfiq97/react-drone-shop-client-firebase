@@ -7,7 +7,7 @@ const Purchase = () => {
   const [data, setData] = useState([]);
   const [selectedData, setSelectedData] = useState();
   useEffect(() => {
-    fetch("https://niche-server-drone.vercel.app/products")
+    fetch("https://niche-server-drone-tasfiq97.vercel.app/products")
       .then((res) => res.json())
       .then((data) => setData(data));
 

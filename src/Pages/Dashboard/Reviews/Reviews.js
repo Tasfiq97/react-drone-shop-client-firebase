@@ -25,7 +25,7 @@ const Reviews = () => {
       ratingNew: ratingNum,
       name: user.displayName,
     };
-    fetch("https://niche-server-drone.vercel.app/review", {
+    fetch("https://niche-server-drone-tasfiq97.vercel.app/review", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(newReview),

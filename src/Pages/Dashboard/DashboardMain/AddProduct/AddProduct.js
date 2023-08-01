@@ -15,7 +15,7 @@ const AddProduct = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("https://niche-server-drone.vercel.app/products", {
+    fetch("https://niche-server-drone-tasfiq97.vercel.app/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

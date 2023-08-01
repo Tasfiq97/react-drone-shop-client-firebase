@@ -13,7 +13,7 @@ const MakeAdmin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const user = { email };
-    fetch("https://niche-server-drone.vercel.app/users/admin", {
+    fetch("https://niche-server-drone-tasfiq97.vercel.app/users/admin", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(user),

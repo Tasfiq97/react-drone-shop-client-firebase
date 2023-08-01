@@ -22,7 +22,7 @@ const Footer = () => {
        <li>Portfolio</li>
        <li>Shop</li>
        <li>Contact</li>
-       <li>Loacation</li>
+       <li>Location</li>
    </ul>
   </Grid>
   <Grid item xs={12} md={3}>
