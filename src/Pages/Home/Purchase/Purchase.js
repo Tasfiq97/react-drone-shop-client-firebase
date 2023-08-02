@@ -1,24 +1,25 @@
-import { Button, Container, Grid } from "@mui/material";
+import { Button, Container, Grid, Skeleton } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SinglePurchase from "../SinglePurchase/SinglePurchase";
+import axios from "axios";
 
 const Purchase = () => {
   const [data, setData] = useState([]);
-  const [selectedData, setSelectedData] = useState();
+  const [selectedData, setSelectedData] = useState([]);
   useEffect(() => {
-    fetch("https://niche-server-drone-tasfiq97.vercel.app/products")
-      .then((res) => res.json())
-      .then((data) => setData(data));
+    axios.get("https://niche-server-drone-tasfiq97.vercel.app/products").then(data=>setData(data.data))
 
-    const newData = data.slice(0, 6);
+    const newData = data?.slice(0, 6);
     setSelectedData(newData);
   }, [data]);
   return (
     <Container>
       <h1>Our Own Drones For you</h1>
       <Grid container gap={5}>
-        {selectedData?.map((data) => (
+        {selectedData.length===0?<>
+          <Skeleton variant="rectangular" width={210} height={60} />
+        </>: selectedData?.map((data) => (
           <SinglePurchase key={data.key} data={data}></SinglePurchase>
         ))}
       </Grid>
