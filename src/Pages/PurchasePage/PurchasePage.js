@@ -13,7 +13,7 @@ const PurchasePage = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   useEffect(() => {
-    fetch("https://niche-server-drone-tasfiq97.vercel.app/products")
+    fetch("https://drone-shop-server.onrender.com/products")
       .then((res) => res.json())
       .then((data) => {
         const filteredData = data.find((pd) => pd.key == productId);

@@ -1,4 +1,4 @@
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Skeleton } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Rating from "react-rating";
 import Card from "@mui/material/Card";
@@ -6,13 +6,15 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import axios from "axios";
 const Review = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("https://niche-server-drone-tasfiq97.vercel.app/reviews")
-      .then((res) => res.json())
-      .then((data) => setReviews(data));
+    axios.get("https://drone-shop-server.onrender.com/reviews").then(data=>setReviews(data.data))
+    // fetch("https://drone-shop-server.onrender.com/reviews")
+    //   .then((res) => res.json())
+    //   .then((data) => setReviews(data));
   }, []);
   return (
     <Container style={{ marginTop: "50px" }}>
@@ -20,7 +22,9 @@ const Review = () => {
       <h4 style={{ color: "gray" }}>our happy customeers</h4>
 
       <Grid container gap={5}>
-        {reviews?.map((review) => (
+        { reviews.length===0?<>
+          <Skeleton variant="rectangular" width={210} height={60} />
+        </>:reviews?.map((review) => (
           // <Grid item xs={12} md={4}>
           //   <img
           //     style={{ width: "50%", borderRadius: "100%" }}

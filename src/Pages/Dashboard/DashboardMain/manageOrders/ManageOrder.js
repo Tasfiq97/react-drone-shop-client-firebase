@@ -13,14 +13,14 @@ const ManageOrder = () => {
   const [order, setOrder] = React.useState([]);
   const [update, setUpdate] = React.useState(null);
   React.useEffect(() => {
-    fetch("https://niche-server-drone-tasfiq97.vercel.app/purchase")
+    fetch("https://drone-shop-server.onrender.com/purchase")
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, [update]);
   const handleUpdate = (id) => {
     console.log(id);
     fetch(
-      `https://niche-server-drone-tasfiq97.vercel.app/purchase/${id}`,
+      `https://drone-shop-server.onrender.com/purchase/${id}`,
       {
         method: "PUT",
         headers: { "content-type": "application/json" },

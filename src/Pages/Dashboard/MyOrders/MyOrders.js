@@ -15,7 +15,7 @@ const MyOrders = () => {
   const [purchase, setPurchase] = React.useState([]);
   React.useEffect(() => {
     fetch(
-      `https://niche-server-drone-tasfiq97.vercel.app/allPurchase?email=${user.email}`
+      `https://drone-shop-server.onrender.com/allPurchase?email=${user.email}`
     )
       .then((res) => res.json())
       .then((data) => setPurchase(data));
@@ -24,7 +24,7 @@ const MyOrders = () => {
     const proceed = window.confirm("are you sure you want to delete");
     if (proceed) {
       fetch(
-        `https://niche-server-drone-tasfiq97.vercel.app/allPurchase/${id}`,
+        `https://drone-shop-server.onrender.com/allPurchase/${id}`,
         {
           method: "DELETE",
         }

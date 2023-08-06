@@ -45,7 +45,7 @@ const OpenModal = ({
       status: "pending",
     };
 
-    fetch("https://niche-server-drone-tasfiq97.vercel.app/purchase", {
+    fetch("https://drone-shop-server.onrender.com/purchase", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(ordersInfo),

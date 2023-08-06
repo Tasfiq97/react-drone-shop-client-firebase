@@ -15,7 +15,7 @@ const AddProduct = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("https://niche-server-drone-tasfiq97.vercel.app/products", {
+    fetch("https://drone-shop-server.onrender.com/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",
