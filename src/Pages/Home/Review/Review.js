@@ -24,6 +24,7 @@ const Review = () => {
       <Grid container gap={5}>
         { reviews.length===0?<>
           <Skeleton variant="rectangular" width={210} height={60} />
+          <Typography> please wait for a while to render data as I am using free server hosting </Typography>
         </>:reviews?.map((review) => (
           // <Grid item xs={12} md={4}>
           //   <img

@@ -1,4 +1,4 @@
-import { Container, Grid, Skeleton } from "@mui/material";
+import { Container, Grid, Skeleton, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import DronesAll from "../Dronesall/DronesAll";
 import Navbar from "../Shared/Navbar";
@@ -27,6 +27,7 @@ const MoreDrones = () => {
         <Grid container gap={6}>
           { alldata.length===0?<>
             <Skeleton variant="rectangular" width={210} height={60} />
+            <Typography> please wait for a while to render data as I am using free server hosting </Typography>
           </>: alldata.map((data) => (
             <DronesAll key={data.key} data={data}></DronesAll>
           ))}

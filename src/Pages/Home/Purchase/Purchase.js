@@ -1,4 +1,4 @@
-import { Button, Container, Grid, Skeleton } from "@mui/material";
+import { Button, Container, Grid, Skeleton, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SinglePurchase from "../SinglePurchase/SinglePurchase";
@@ -19,6 +19,7 @@ const Purchase = () => {
       <Grid container gap={5}>
         {selectedData.length===0?<>
           <Skeleton variant="rectangular" width={210} height={160} />
+          <Typography> please wait for a while to render data as I am using free server hosting </Typography>
         </>: selectedData?.map((data) => (
           <SinglePurchase key={data.key} data={data}></SinglePurchase>
         ))}
